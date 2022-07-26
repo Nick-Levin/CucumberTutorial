@@ -1,18 +1,16 @@
 package org;
 
 import io.undertow.Undertow;
-import io.undertow.util.Headers;
+import org.config.ServerConfig;
+import org.handler.router.MainRouter;
 
 public class App {
 
     public static void main(String ...args) {
 
         Undertow.builder()
-                .addHttpListener(8000, "localhost")
-                .setHandler(ex -> {
-                    ex.getResponseHeaders().add(Headers.CONTENT_TYPE, "application/json");
-                    ex.getResponseSender().send("{\"msg\":\"application alive\"}");
-                })
+                .addHttpListener(ServerConfig.port, ServerConfig.host)
+                .setHandler(MainRouter.createRouter())
                 .build()
                 .start();
 
