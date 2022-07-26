@@ -9,6 +9,8 @@ public class MainRouter {
 
     private static final String BASE_URL = "/api/v1";
 
+    private MainRouter() {}
+
     public static HttpHandler createRouter() {
         return new RoutingHandler()
                 .add(Methods.GET, BASE_URL + "/health", new HealthCheckHandler());
