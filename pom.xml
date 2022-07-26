@@ -16,11 +16,13 @@
         <lombok.version>1.18.24</lombok.version>
         <undertow.version>2.2.18.Final</undertow.version>
         <gson.version>2.9.0</gson.version>
-        <apache.commons.version>3.12.0</apache.commons.version>
+        <guava.version>31.1-jre</guava.version>
         <slf4j.version>1.7.36</slf4j.version>
         <logback.version>1.2.11</logback.version>
         <jedis.version>4.2.3</jedis.version>
-        <mongo.driver.version>3.12.11</mongo.driver.version>
+        <mysql.connector.version>8.0.30</mysql.connector.version>
+        <cp.hikari.version>5.0.1</cp.hikari.version>
+        <jwt.version>4.0.0</jwt.version>
 
         <!-- Test Props -->
         <junit.version>5.9.0-M1</junit.version>
@@ -48,9 +50,9 @@
             <version>${gson.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${apache.commons.version}</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -68,6 +70,13 @@
             <version>${logback.version}</version>
         </dependency>
 
+        <!-- SECURITY DEPS -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
+
         <!-- CONSISTENCY DEPS -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -75,9 +84,14 @@
             <version>${jedis.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>${mongo.driver.version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>${cp.hikari.version}</version>
         </dependency>
 
         <!-- TEST DEPS -->
