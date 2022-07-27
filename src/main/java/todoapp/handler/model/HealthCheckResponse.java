@@ -1,4 +1,4 @@
-package org.handler.model;
+package todoapp.handler.model;
 
 import lombok.Builder;
 

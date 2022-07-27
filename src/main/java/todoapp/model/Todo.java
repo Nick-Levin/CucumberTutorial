@@ -1,4 +1,4 @@
-package org.model;
+package todoapp.model;
 
 import lombok.*;
 

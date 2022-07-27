@@ -1,8 +1,8 @@
-package org;
+package todoapp;
 
 import io.undertow.Undertow;
-import org.config.ServerConfig;
-import org.handler.router.MainRouter;
+import todoapp.config.ServerConfig;
+import todoapp.handler.router.MainRouter;
 
 public class App {
 

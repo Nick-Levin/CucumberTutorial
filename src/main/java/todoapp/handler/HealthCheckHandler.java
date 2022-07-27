@@ -1,11 +1,11 @@
-package org.handler;
+package todoapp.handler;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
-import org.handler.model.HealthCheckResponse;
+import todoapp.handler.model.HealthCheckResponse;
 
 import java.util.UUID;
 

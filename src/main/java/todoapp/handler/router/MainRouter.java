@@ -1,9 +1,9 @@
-package org.handler.router;
+package todoapp.handler.router;
 
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
 import io.undertow.util.Methods;
-import org.handler.HealthCheckHandler;
+import todoapp.handler.HealthCheckHandler;
 
 public class MainRouter {
 

@@ -1,4 +1,4 @@
-package org.storage.db;
+package todoapp.storage.db;
 
 public interface TodoRepository {
 }

@@ -1,6 +1,6 @@
-package org.config;
+package todoapp.config;
 
-import org.exceptions.config.CouldNotLoadFileException;
+import todoapp.exceptions.config.CouldNotLoadFileException;
 
 import java.io.IOException;
 import java.util.Properties;

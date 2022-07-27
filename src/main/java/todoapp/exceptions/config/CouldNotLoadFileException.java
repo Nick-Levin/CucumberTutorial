@@ -1,4 +1,4 @@
-package org.exceptions.config;
+package todoapp.exceptions.config;
 
 public class CouldNotLoadFileException extends RuntimeException {
 

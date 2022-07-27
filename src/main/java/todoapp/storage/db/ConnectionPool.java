@@ -1,4 +1,4 @@
-package org.storage.db;
+package todoapp.storage.db;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
