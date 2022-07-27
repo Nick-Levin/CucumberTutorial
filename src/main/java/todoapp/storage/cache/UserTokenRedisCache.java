@@ -5,14 +5,14 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import java.util.Optional;
 
-public class UserTokenRedisCache implements Cache<String, Token> {
+public class UserTokenRedisCache implements Cache<String, String> {
 
-    private final Map<String, Token> cache = Maps.newHashMap();
-    private final Cache<String, Token> remoteCache = new RedisRemoteCacheManager();
+    private final Map<String, String> cache = Maps.newHashMap();
+    private final Cache<String, String> remoteCache = new RedisRemoteCacheManager();
 
     @Override
-    public Optional<Token> get(String key) {
-        final Token token = cache.get(key);
+    public Optional<String> get(String key) {
+        final String token = cache.get(key);
 
         if(token == null) return getFromRemote(key);
 
@@ -20,16 +20,16 @@ public class UserTokenRedisCache implements Cache<String, Token> {
     }
 
     @Override
-    public void set(String key, Token value) {
+    public void set(String key, String value) {
         setOnRemote(key, value);
         cache.put(key, value);
     }
 
-    private Optional<Token> getFromRemote(String key) {
+    private Optional<String> getFromRemote(String key) {
         return remoteCache.get(key);
     }
 
-    private void setOnRemote(String key, Token value) {
+    private void setOnRemote(String key, String value) {
         remoteCache.set(key, value);
     }
 

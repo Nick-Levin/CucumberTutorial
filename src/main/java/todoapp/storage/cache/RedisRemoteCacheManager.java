@@ -7,22 +7,22 @@ import redis.clients.jedis.Jedis;
 
 import java.util.Optional;
 
-public class RedisRemoteCacheManager implements Cache<String, Token>{
+public class RedisRemoteCacheManager implements Cache<String, String>{
 
     private final Jedis jedis = new Jedis();
     private final Gson gson = new GsonBuilder().create();
 
     @Override
-    public Optional<Token> get(String key) {
+    public Optional<String> get(String key) {
         final String token = jedis.get(key);
 
         if(Strings.isNullOrEmpty(token)) return Optional.empty();
 
-        return Optional.of(gson.fromJson(token, Token.class));
+        return Optional.of(gson.fromJson(token, String.class));
     }
 
     @Override
-    public void set(String key, Token value) {
+    public void set(String key, String value) {
         jedis.set(key, gson.toJson(value));
     }
 
